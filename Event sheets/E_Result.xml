@@ -1,0 +1,350 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Result</name>
+    <events>
+        <variable constant="0" name="FirstEmail" sid="177037246254798" static="0" type="text"></variable>
+        <variable constant="0" name="LastEmail" sid="399509413095681" static="0" type="text"></variable>
+        <variable constant="0" name="EmailStatus" sid="238510364853694" static="0" type="text"></variable>
+        <event-block sid="681552630202633">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="220705958554051" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="120311629455807" type="sf_Result">
+                    <param id="0" name="Text">Lap</param>
+                </action>
+                <action id="-9" name="Set value" sid="367142215940007" type="System">
+                    <param id="0" name="Variable">Data_score</param>
+                    <param id="1" name="Value">Lap</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="641907945028628" type="btn_Submit">
+                    <param id="0" name="Instance variable">Clicked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-13" name="Set boolean" sid="749646542529551" type="btn_Skip">
+                    <param id="0" name="Instance variable">Clicked</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="6" name="Set focused" sid="385384519830789" type="tb_Email" />
+                <action id="7" name="Set CSS style" sid="372492270752496" type="tb_Email">
+                    <param id="0" name="Property name">&quot;border-style&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="342300753031629" type="tb_Email">
+                    <param id="0" name="Property name">&quot;outline-style&quot;</param>
+                    <param id="1" name="Value">&quot;none&quot;</param>
+                </action>
+                <action id="7" name="Set CSS style" sid="440449180868445" type="tb_Email">
+                    <param id="0" name="Property name">&quot;background-color&quot;</param>
+                    <param id="1" name="Value">&quot;rgba(0,0,0,0)&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="982299371197332">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="710328044028651" type="Touch">
+                    <param id="0" name="Object">btn_LeaderBoard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="885028671834091" type="btn_LeaderBoard">
+                    <param id="0" name="Scale">0.95</param>
+                </action>
+                <action id="-16" name="Wait" sid="933404444373984" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="9" name="Set scale" sid="613954187875981" type="btn_LeaderBoard">
+                    <param id="0" name="Scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="509933454505847">
+            <conditions>
+                <condition id="17" name="On tap object" sid="485630770811951" type="Touch">
+                    <param id="0" name="Object">btn_LeaderBoard</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="111892159950538" type="System">
+                    <param id="0" name="Layout">lay5 - Leaderboard</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="798280591311917" title="Submit Email">
+            <sub-events>
+                <event-block sid="465210295333039">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="212690156537590" type="Touch">
+                            <param id="0" name="Object">btn_Submit</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="458064850081487" type="btn_Submit">
+                            <param id="0" name="Instance variable">Clicked</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="969737267957302" type="btn_Submit">
+                            <param id="0" name="Scale">0.95</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="970518908362130" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="484269305449617" type="btn_Submit">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="660155318453955">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="759787502522156" type="Touch">
+                            <param id="0" name="Object">btn_Submit</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="483901826861266" type="btn_Submit">
+                            <param id="0" name="Instance variable">Clicked</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="203023744463720" type="System">
+                            <param id="0" name="Variable">FirstEmail</param>
+                            <param id="1" name="Value">tokenat(tb_Email.Text,0,&quot;@&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="397360197653386" type="System">
+                            <param id="0" name="Variable">LastEmail</param>
+                            <param id="1" name="Value">tokenat(tb_Email.Text,1,&quot;@&quot;)</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="350477378078849">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="941133981558345" type="System">
+                                    <param id="0" name="First value">len(LastEmail)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">4</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="272430538922693" type="System">
+                                    <param id="0" name="First value">find(LastEmail,&quot;.&quot;)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="290491379614423" type="System">
+                                    <param id="0" name="First value">len(tokenat(LastEmail,0,&quot;.&quot;))</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="811004031402076" type="System">
+                                    <param id="0" name="First value">len(tokenat(LastEmail,1,&quot;.&quot;))</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="903312593558762" type="System">
+                                    <param id="0" name="First value">len(FirstEmail)</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="295811149156869" type="System">
+                                    <param id="0" name="Variable">EmailStatus</param>
+                                    <param id="1" name="Value">&quot;benar&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="749473176535847">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="624875141255312" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="410578567868246" type="System">
+                                    <param id="0" name="Variable">EmailStatus</param>
+                                    <param id="1" name="Value">&quot;salah&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="757133299559292">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="843367849503204" type="Touch">
+                            <param id="0" name="Object">btn_Submit</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="887518157673560" type="btn_Submit">
+                            <param id="0" name="Instance variable">Clicked</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="894925946154913">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="935145425472842" type="System">
+                                    <param id="0" name="Variable">EmailStatus</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;benar&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-13" name="Set boolean" sid="214533242929785" type="btn_Submit">
+                                    <param id="0" name="Instance variable">Clicked</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="154693970324087" type="btn_Skip">
+                                    <param id="0" name="Instance variable">Clicked</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="0" name="Set text" sid="430709325377358" type="txt_EmailStatus">
+                                    <param id="0" name="Text">&quot;Email is Valid&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="747016389347439" type="txt_EmailStatus">
+                                    <param id="0" name="Color">rgb(27, 255, 21)</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="645166534131692" type="System">
+                                    <param id="0" name="Variable">Data_email</param>
+                                    <param id="1" name="Value">tb_Email.Text</param>
+                                </action>
+                                <action id="0" name="Request URL" sid="234086464130443" type="AJAX">
+                                    <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                                    <param id="1" name="URL">SetEmail&amp;Data_email&amp;SetScore&amp;Data_score&amp;SetDeviceId&amp;Data_deviceID</param>
+                                </action>
+                                <action id="0" name="Set item" sid="277163001955460" type="LocalStorage">
+                                    <param id="0" name="Key">&quot;data_email&quot;</param>
+                                    <param id="1" name="Value">Data_email</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="650100115086757">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="991497507795968" type="System">
+                                    <param id="0" name="Variable">EmailStatus</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;salah&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="333985984852707" type="txt_EmailStatus">
+                                    <param id="0" name="Text">&quot;Email is Invalid&quot;</param>
+                                </action>
+                                <action id="4" name="Set font color" sid="230625542679382" type="txt_EmailStatus">
+                                    <param id="0" name="Color">rgb(255, 68, 54)</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="992119054758412" type="System">
+                                    <param id="0" name="Seconds">0.1</param>
+                                </action>
+                                <action id="-2" name="Go to layout" sid="601012033063262" type="System">
+                                    <param id="0" name="Layout">lay5 - Leaderboard</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="179779582822985">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="998315558621187" type="AJAX">
+                            <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="153546679571533" type="System">
+                            <param id="0" name="Variable">Data_deviceID</param>
+                            <param id="1" name="Value">tokenat(AJAX.LastData,1, &quot;|&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="363673351410611" type="System">
+                            <param id="0" name="Variable">Data_id</param>
+                            <param id="1" name="Value">tokenat(AJAX.LastData,0, &quot;|&quot;)</param>
+                        </action>
+                        <action id="0" name="Set item" sid="557553718074372" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_deviceid&quot;</param>
+                            <param id="1" name="Value">Data_deviceID</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="623847530860309" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="716955530773106" type="txt_EmailStatus">
+                            <param id="0" name="Text">&quot;Your Score is Submitted&quot;</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="369445121452703" type="txt_EmailStatus">
+                            <param id="0" name="Color">rgb(232, 220, 6)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="222547701132903" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="730157969033629" type="System">
+                            <param id="0" name="Layout">lay5 - Leaderboard</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="231000336757658">
+                    <conditions>
+                        <condition id="1" name="On error" sid="960838302703974" type="AJAX">
+                            <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="665540488473784" type="txt_EmailStatus">
+                            <param id="0" name="Text">&quot;Failed to Connect Database&quot;</param>
+                        </action>
+                        <action id="4" name="Set font color" sid="308812794370154" type="txt_EmailStatus">
+                            <param id="0" name="Color">rgb(232, 220, 6)</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="791429280917386" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="608236117915441" type="System">
+                            <param id="0" name="Layout">lay5 - Leaderboard</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="972869485670280" title="Skip">
+            <sub-events>
+                <event-block sid="482105091788833">
+                    <conditions>
+                        <condition id="4" name="Is touching object" sid="445282976909669" type="Touch">
+                            <param id="0" name="Object">btn_Skip</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="9" name="Set scale" sid="609411276034037" type="btn_Skip">
+                            <param id="0" name="Scale">0.95</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="179443788020786" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="9" name="Set scale" sid="772743205097886" type="btn_Skip">
+                            <param id="0" name="Scale">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="161842581298095">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="444807061850532" type="Touch">
+                            <param id="0" name="Object">btn_Skip</param>
+                        </condition>
+                        <condition id="-8" name="Is boolean instance variable set" sid="575106643604041" type="btn_Skip">
+                            <param id="0" name="Instance variable">Clicked</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Request URL" sid="317650218834251" type="AJAX">
+                            <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                            <param id="1" name="URL">SetEmail&amp;Data_email&amp;SetScore&amp;Data_score&amp;SetDeviceId&amp;Data_deviceID</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="610130406089018" type="btn_Skip">
+                            <param id="0" name="Instance variable">Clicked</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="153340610089306" type="btn_Submit">
+                            <param id="0" name="Instance variable">Clicked</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="707103578857147" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="128626266301445" type="System">
+                            <param id="0" name="Layout">lay5 - Leaderboard</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>

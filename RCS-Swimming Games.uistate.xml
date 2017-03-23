@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="0">Lay1 - Menu</layout>
+        <layout active="1" order="1">Lay3 - Swimming Games</layout>
+        <layout order="3">Lay4 - Result</layout>
+        <event-sheet order="2">E_Game</event-sheet>
+        <event-sheet order="4">E_Result</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="1" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/obj_PlatformBase/" />
+        <folder expanded="1" path="animation-folder/obj_Karakter/" />
+        <folder expanded="1" path="animation-folder/obj_Bottom/" />
+        <folder expanded="1" path="animation-folder/pic_Watre/" />
+        <folder expanded="1" path="animation-folder/obj_Surface/" />
+        <folder expanded="1" path="animation-folder/obj_Obstacle/" />
+        <folder expanded="1" path="animation-folder/BG_Kiri/" />
+        <folder expanded="1" path="animation-folder/BG_Kanan/" />
+        <folder expanded="1" path="animation-folder/obj_Pijakan/" />
+        <folder expanded="1" path="animation-folder/btn_TouchL/" />
+        <folder expanded="1" path="animation-folder/btn_TouchR/" />
+        <folder expanded="1" path="animation-folder/pic_Renang/" />
+        <folder expanded="1" path="animation-folder/pic_ReverseBar/" />
+        <folder expanded="1" path="animation-folder/pic_Laps/" />
+        <folder expanded="1" path="animation-folder/pic_BGtime/" />
+        <folder expanded="1" path="animation-folder/pic_BarBG/" />
+        <folder expanded="1" path="animation-folder/pic_BarIndct/" />
+        <folder expanded="1" path="animation-folder/pic_efekair/" />
+        <folder expanded="1" path="animation-folder/obj_ReverseBar/" />
+        <folder expanded="1" path="animation-folder/obj_ReverseArrow/" />
+        <folder expanded="1" path="animation-folder/pic_ReverseBar2/" />
+        <folder expanded="1" path="animation-folder/btn_Start/" />
+        <folder expanded="1" path="animation-folder/pic_Muter/" />
+        <folder expanded="1" path="animation-folder/pic_jam/" />
+        <folder expanded="1" path="animation-folder/pic_SponsorAgate/" />
+        <folder expanded="1" path="animation-folder/pic_Title/" />
+        <folder expanded="1" path="animation-folder/pic_LeaderBoard/" />
+        <folder expanded="1" path="animation-folder/pic_ResultBar/" />
+        <folder expanded="1" path="animation-folder/btn_Skip/" />
+        <folder expanded="1" path="animation-folder/btn_LeaderBoard/" />
+        <folder expanded="1" path="animation-folder/btn_Submit/" />
+        <folder expanded="1" path="animation-folder/pic_fadeout/" />
+        <folder expanded="1" path="animation-folder/pic_Appreciate/" />
+        <folder expanded="1" path="animation-folder/BG_Tutorial/" />
+        <folder expanded="1" path="animation-folder/TapSprite/" />
+        <folder expanded="1" path="animation-folder/TapSprite2/" />
+        <folder expanded="1" path="animation-folder/TapHold/" />
+        <folder expanded="1" path="animation-folder/btn_Next/" />
+    </folders-expanded>
+</c2uistate>

@@ -1,0 +1,1599 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Game</name>
+    <events>
+        <variable constant="0" name="ReverseSpedd" sid="768290408837332" static="0" type="number">0</variable>
+        <variable constant="0" name="Lap" sid="559657845892508" static="0" type="number">0</variable>
+        <variable constant="0" name="MoveState" sid="136755710895302" static="0" type="number">1</variable>
+        <variable constant="0" name="MovingTime" sid="674402904595553" static="0" type="number">3</variable>
+        <variable constant="0" name="Time_MiliSecond" sid="192347581435803" static="0" type="number">60</variable>
+        <variable constant="0" name="Time_Second" sid="878877551359050" static="0" type="number">60</variable>
+        <variable constant="0" name="SwimmingState" sid="675897787695752" static="0" type="number">1</variable>
+        <event-block sid="445497870975518">
+            <conditions>
+                <condition id="0" name="On clicked" sid="363408183892565" type="Button" />
+            </conditions>
+            <actions>
+                <action id="9" name="Reload" sid="544610496698322" type="Browser" />
+            </actions>
+        </event-block>
+        <event-block sid="322765633062142">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="775223696869740" type="System" />
+            </conditions>
+            <actions>
+                <action id="-12" name="Set group active" sid="338005021214940" type="System">
+                    <param id="0" name="Group name">&quot;Dasar&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action id="10" name="Request fullscreen" sid="266954980362302" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action behavior="Solid" id="0" name="Set enabled" sid="892754285734738" type="obj_Surface">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="226764626560003" type="System">
+                    <param id="0" name="Group name">&quot;First Jump&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="689624838647767" type="pic_Renang">
+                    <param id="0" name="Pin to">obj_Karakter</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+                <action id="-12" name="Set group active" sid="133498312223915" type="System">
+                    <param id="0" name="Group name">&quot;Animation Manager&quot;</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="476909343523857" type="System">
+                    <param id="0" name="Variable">MovingTime</param>
+                    <param id="1" name="Value">3</param>
+                </action>
+                <action id="-9" name="Set value" sid="263485992822405" type="System">
+                    <param id="0" name="Variable">Time_MiliSecond</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="-9" name="Set value" sid="433080796121164" type="System">
+                    <param id="0" name="Variable">Time_Second</param>
+                    <param id="1" name="Value">60</param>
+                </action>
+                <action id="-9" name="Set value" sid="978546527019349" type="System">
+                    <param id="0" name="Variable">Lap</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="107578942806644" type="System">
+                    <param id="0" name="Variable">SwimmingState</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="617400781920403" type="pic_Appreciate">
+                    <param id="0" name="Pin to">obj_ReverseArrow</param>
+                    <param id="1" name="Mode">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="927222536204820">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="341542671741238" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="827931188400516" type="System">
+                    <param id="0" name="Object to create">obj_Obstacle</param>
+                    <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                    <param id="2" name="X">obj_Karakter.BBoxRight+2000</param>
+                    <param id="3" name="Y">pic_Watre.BBoxTop</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="423753020628478">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="331096112690625" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="753194702542229" type="sf_Laps">
+                    <param id="0" name="Text">Lap</param>
+                </action>
+                <action id="-3" name="Set position" sid="288542280095148" type="pic_efekair">
+                    <param id="0" name="X">obj_Karakter.X</param>
+                    <param id="1" name="Y">obj_water.BBoxTop</param>
+                </action>
+                <action id="0" name="Set text" sid="201175597586341" type="dbg_Speed">
+                    <param id="0" name="Text">&quot;Speed : &quot; &amp;obj_Karakter.Platform.Speed</param>
+                </action>
+                <action id="0" name="Set text" sid="842352945504696" type="dbg_Acc">
+                    <param id="0" name="Text">&quot;Acc : &quot;&amp; obj_Karakter.Platform.Acceleration</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" inactive="1" sid="641104481280407" title="First Jump">
+            <sub-events>
+                <event-block sid="233740078910866">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="915534236859077" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="187819120096882" type="obj_Karakter">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="762421804423024" type="obj_Karakter">
+                            <param id="0" name="Acceleration">700</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="870696115936542">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="986200895615100" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="514180773630166" type="obj_Karakter">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="442447054393932" type="System">
+                            <param id="0" name="Seconds">0.5</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="945113936931640" type="System">
+                            <param id="0" name="Group name">&quot;First Jump&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="231038818023819" title="First Start">
+            <sub-events>
+                <event-block sid="447860435197289">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="106854140175679" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="694130665118105" type="obj_Karakter">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="517769397691137" type="obj_Karakter">
+                            <param id="0" name="Acceleration">1500</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137576394404110">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="886560997384518" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="360124383813651" type="System">
+                            <param id="0" name="Group name">&quot;First Start&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="764069970859772" title="Lap Counter">
+            <sub-events>
+                <event-block sid="434195782569272">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="466294905271282" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="941919828819323" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">542</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="831385576159854" type="System">
+                            <param id="0" name="Variable">Lap</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="701953857884671" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="943930132231685" type="System">
+                            <param id="0" name="Group name">&quot;Lap Counter&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="293417227750002" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="226864130919261">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="611919202817248" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                        <condition id="-1" name="Compare X" sid="826767671603370" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">9050</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="606150757862684" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="515965086431548" type="System">
+                            <param id="0" name="Group name">&quot;Lap Counter&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="573754879853629" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Value">15</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" inactive="1" sid="452778570352355" title="Counting Time">
+            <sub-events>
+                <event-block sid="657754028286764">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="906181905834234" type="System" />
+                        <condition id="-14" name="Compare variable" sid="245470396406491" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="845663677503644" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Value">dt</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="910398571491931">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="211107131911713" type="System">
+                                    <param id="0" name="Variable">Time_Second</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="578001193253779" type="sf_Detik">
+                                    <param id="0" name="Text">&quot;0&quot;&amp;Time_Second</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="597911757765540">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="456136219376694" type="System">
+                                    <param id="0" name="Variable">Time_Second</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="915391579228953" type="sf_Detik">
+                                    <param id="0" name="Text">Time_Second</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="615152520745076">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="610880761059914" type="System">
+                                    <param id="0" name="Variable">Time_MiliSecond</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="675669619234876" type="sf_MiliDetik">
+                                    <param id="0" name="Text">&quot;0&quot;&amp;mid(tokenat(str(Time_Second),1,&quot;.&quot;),0,2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="370999363237928">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="565569968302299" type="System">
+                                    <param id="0" name="Variable">Time_MiliSecond</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Value">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="282604955653375" type="sf_MiliDetik">
+                                    <param id="0" name="Text">mid(tokenat(str(Time_Second),1,&quot;.&quot;),0,2)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="383535216214194">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="775441985404888" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="967264957330363" type="System">
+                            <param id="0" name="Variable">Time_MiliSecond</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="638932800089099" type="System">
+                            <param id="0" name="Variable">Time_Second</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Set text" sid="191959976492200" type="sf_MiliDetik">
+                            <param id="0" name="Text">&quot;00&quot;</param>
+                        </action>
+                        <action id="0" name="Set text" sid="838305587812739" type="sf_Detik">
+                            <param id="0" name="Text">&quot;00&quot;</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="312503193030690" type="System">
+                            <param id="0" name="Variable">Data_score</param>
+                            <param id="1" name="Value">Lap</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="986532923044954">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="877607824633365" type="System">
+                                    <param id="0" name="Variable">Data_email</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Go to layout" sid="954741452941712" type="System">
+                                    <param id="0" name="Layout">Lay4 - Result</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="196217383236151" type="System">
+                                    <param id="0" name="Group name">&quot;Counting Time&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="526264327379605">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="584961359191504" type="System">
+                                    <param id="0" name="Variable">Data_email</param>
+                                    <param id="1" name="Comparison">1</param>
+                                    <param id="2" name="Value">&quot;&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Request URL" sid="758847142802607" type="AJAX">
+                                    <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                                    <param id="1" name="URL">SetEmail&amp;Data_email&amp;SetScore&amp;Data_score&amp;SetDeviceId&amp;Data_deviceID</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="648227734701879" type="System">
+                                    <param id="0" name="Group name">&quot;Counting Time&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="302232110079966" title="Controls">
+            <sub-events>
+                <event-block sid="430449215610427">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="777319029431850" type="obj_Karakter">
+                            <param id="0" name="Object">pic_Watre</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="797561098756622" type="System">
+                            <param id="0" name="Variable">MovingTime</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="583890805566115" type="System">
+                            <param id="0" name="First value">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="435169584808378" type="obj_Karakter">
+                            <param id="0" name="Max fall speed">400</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="969209377601189" type="obj_Karakter">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="999860910165548">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="859424351182575" type="obj_Karakter">
+                            <param id="0" name="Object">pic_Watre</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="423372408719864" type="System">
+                            <param id="0" name="Variable">MovingTime</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                        <condition id="-8" name="Compare two values" sid="387656283887583" type="System">
+                            <param id="0" name="First value">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="282365985676180" type="obj_Karakter">
+                            <param id="0" name="Max fall speed">400</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="598198469027679" type="obj_Karakter">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="843079751504752">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="579982664677464" type="System">
+                            <param id="0" name="Variable">MovingTime</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="722002701615100" type="obj_Karakter">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="370537762082583">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="294858814387230" type="System">
+                            <param id="0" name="Interval (seconds)">1</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="697574413505204" type="System">
+                            <param id="0" name="Variable">MovingTime</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="117349496781955" type="System">
+                            <param id="0" name="Variable">MovingTime</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="228052915398658">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="834096391011090" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">9050</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="299659351031828" type="System">
+                            <param id="0" name="Group name">&quot;Lap Counter&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="830064963094968" type="pic_Renang">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="546779007294449">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="952889306010633" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">542</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="186465219167049" type="System">
+                            <param id="0" name="Group name">&quot;Lap Counter&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="914815527668959" type="pic_Renang">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="970902893541548">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="375325232135589" type="obj_Karakter" />
+                        <condition id="-8" name="Compare two values" sid="784963610865251" type="System">
+                            <param id="0" name="First value">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="668359352393156" type="obj_Karakter">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="672207650001028">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="980292276074676" type="obj_Karakter" />
+                        <condition id="-8" name="Compare two values" sid="998708282919170" type="System">
+                            <param id="0" name="First value">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Second value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="834919391436971" type="obj_Karakter">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="996198422576841">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="453202903464959" type="System">
+                            <param id="0" name="Interval (seconds)">0.1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="277266916715540" type="obj_Karakter">
+                            <param id="0" name="Acceleration">Self.Platform.Acceleration-10</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="540562159725915" title="Virtual Button">
+                    <sub-events>
+                        <event-block sid="215346390453589">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="351501617679887" type="Touch">
+                                    <param id="0" name="Object">btn_TouchL</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="118173772183995" type="btn_TouchL">
+                                    <param id="0" name="Scale">0.95</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="873980608154148" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="776178473756090" type="btn_TouchL">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="945290011025654">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="523184036515583" type="Touch">
+                                    <param id="0" name="Object">btn_TouchL</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="396648452054202" type="System">
+                                    <param id="0" name="First value">MoveState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="379794333698466" type="obj_Karakter">
+                                    <param id="0" name="Object">pic_Watre</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="409176798757802" type="System">
+                                    <param id="0" name="Variable">MoveState</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="462818773809617" type="obj_Karakter">
+                                    <param id="0" name="Acceleration">obj_Karakter.Platform.Acceleration+40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="368665950347531" type="System">
+                                    <param id="0" name="Variable">MovingTime</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="544863027957536">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="184712704030458" type="Touch">
+                                    <param id="0" name="Object">btn_TouchR</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="9" name="Set scale" sid="829378360350283" type="btn_TouchR">
+                                    <param id="0" name="Scale">0.95</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="203868124726412" type="System">
+                                    <param id="0" name="Seconds">0.01</param>
+                                </action>
+                                <action id="9" name="Set scale" sid="627902458206625" type="btn_TouchR">
+                                    <param id="0" name="Scale">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="453541013833698">
+                            <conditions>
+                                <condition id="17" name="On tap object" sid="350708482927856" type="Touch">
+                                    <param id="0" name="Object">btn_TouchR</param>
+                                </condition>
+                                <condition id="-8" name="Compare two values" sid="657528447963873" type="System">
+                                    <param id="0" name="First value">MoveState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="176064005279513" type="obj_Karakter">
+                                    <param id="0" name="Object">pic_Watre</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="891575932476660" type="System">
+                                    <param id="0" name="Variable">MoveState</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="348168007930681" type="obj_Karakter">
+                                    <param id="0" name="Acceleration">obj_Karakter.Platform.Acceleration+40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="823932052388213" type="System">
+                                    <param id="0" name="Variable">MovingTime</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="741498676385107">
+                            <conditions />
+                            <actions />
+                        </event-block>
+                        <event-block sid="240623373347015">
+                            <conditions>
+                                <condition id="16" name="On hold over object" sid="178610274224315" type="Touch">
+                                    <param id="0" name="Object">btn_TouchL</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="486565476499126">
+                                    <conditions>
+                                        <condition id="4" name="Is touching object" sid="784993957964470" type="Touch">
+                                            <param id="0" name="Object">btn_TouchR</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="359277172892419" type="obj_Karakter">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                        <action behavior="Platform" id="2" name="Set acceleration" sid="783187577991553" type="obj_Karakter">
+                                            <param id="0" name="Acceleration">700</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" sid="420725752421280" title="Keyboard">
+                    <sub-events>
+                        <event-block sid="477844622925670">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="628643735880203" type="System">
+                                    <param id="0" name="First value">MoveState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="392198310770157" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="737030500617245" type="obj_Karakter">
+                                    <param id="0" name="Object">pic_Watre</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="690113346188947" type="System">
+                                    <param id="0" name="Variable">MoveState</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="373410134202022" type="obj_Karakter">
+                                    <param id="0" name="Acceleration">obj_Karakter.Platform.Acceleration+40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="196674930178757" type="System">
+                                    <param id="0" name="Variable">MovingTime</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="684967014345349">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="682646824221338" type="System">
+                                    <param id="0" name="First value">MoveState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">2</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="903404481958006" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                                <condition id="1" name="Is overlapping another object" sid="756080787689736" type="obj_Karakter">
+                                    <param id="0" name="Object">pic_Watre</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="200937297637349" type="System">
+                                    <param id="0" name="Variable">MoveState</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="244624413842989" type="obj_Karakter">
+                                    <param id="0" name="Acceleration">obj_Karakter.Platform.Acceleration+40</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="965343287167396" type="System">
+                                    <param id="0" name="Variable">MovingTime</param>
+                                    <param id="1" name="Value">2</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="619436832262834">
+                            <conditions>
+                                <condition id="0" name="On key pressed" sid="605710037370019" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="272311843642781">
+                                    <conditions>
+                                        <condition id="2" name="Key is down" sid="725018561917651" type="Keyboard">
+                                            <param id="0" name="Key">68 (D)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="7" name="Simulate control" sid="371733971834233" type="obj_Karakter">
+                                            <param id="0" name="Control">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="911170929211823" title="Distance Bar">
+            <sub-events>
+                <event-block sid="863442319420756">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="205995103130812" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-1" name="Set X" sid="970541977925800" type="pic_BarIndct">
+                            <param id="0" name="X">((obj_Karakter.X)/pic_Watre.Width)*pic_BarBG.Width+630</param>
+                        </action>
+                        <action id="-5" name="Set width" sid="539900135043974" type="pic_BarFill">
+                            <param id="0" name="Width">((obj_Karakter.X)/pic_Watre.Width)*pic_BarBG.Width</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="696807867376050">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="955579789996877" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="655775168823755" type="pic_BarIndct">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="275097688829272">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="905964669391075" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="7" name="Set mirrored" sid="991882838414600" type="pic_BarIndct">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="719057956685734" title="Obstacle">
+            <sub-events>
+                <event-block sid="594573493371255">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="738573128690111" type="System">
+                            <param id="0" name="Interval (seconds)">0.5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="1" name="Set period" sid="457580725924382" type="obj_Obstacle">
+                            <param id="0" name="Period">random(2,4)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="572263676587112">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="592717730565854" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="944101091825283" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(1500,2500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="914961171761808" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(3500,4500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="199758502766779" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(4500,5500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="552313977110504" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(6500,7500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="537336967367961">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="588000283996504" type="obj_Karakter" />
+                        <condition id="-14" name="Compare variable" sid="311677634987169" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="263170794533319" type="obj_Obstacle" />
+                        <action id="-3" name="Create object" sid="459322840604038" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(1500,2500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="131357153284755" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(3500,4500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="818375072517126" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(4500,5500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="305013239718109" type="System">
+                            <param id="0" name="Object to create">obj_Obstacle</param>
+                            <param id="1" name="Layer">&quot;Obstacle&quot;</param>
+                            <param id="2" name="X">random(6500,7500)</param>
+                            <param id="3" name="Y">710</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="199192950651972" title="AccSet0">
+                    <sub-events>
+                        <event-block sid="290539298976734">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="496448501328847" type="obj_Karakter">
+                                    <param id="0" name="Object">obj_Obstacle</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-16" name="Wait" sid="214874963385814" type="System">
+                                    <param id="0" name="Seconds">4</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="926422526840393" type="System">
+                                    <param id="0" name="Group name">&quot;AccSet0&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="715572118477085">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="520950645911844" type="System">
+                                            <param id="0" name="Interval (seconds)">1</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Platform" id="2" name="Set acceleration" sid="513707347177287" type="obj_Karakter">
+                                            <param id="0" name="Acceleration">Self.Platform.Acceleration-100</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="379205041056746">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="586722980465518" type="obj_Karakter">
+                            <param id="0" name="Object">obj_Obstacle</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="205196054458439" type="System">
+                            <param id="0" name="Group name">&quot;AccSet0&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="581850396477280" title="Dasar">
+            <sub-events>
+                <event-block sid="451762961248799">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="557970311347124" type="obj_Karakter">
+                            <param id="0" name="Object">obj_Bottom</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="10" name="Set angle of gravity" sid="492466854438283" type="obj_Karakter">
+                            <param id="0" name="Angle">-90</param>
+                        </action>
+                        <action behavior="Solid" id="0" name="Set enabled" sid="790898954455205" type="obj_Surface">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="6" name="Set max fall speed" sid="321428559701390" type="obj_Karakter">
+                            <param id="0" name="Max fall speed">100</param>
+                        </action>
+                        <action behavior="Platform" id="14" name="Set jump sustain" sid="474025523596091" type="obj_Karakter">
+                            <param id="0" name="Jump sustain">100</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="500344830924150" type="obj_Karakter">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="212353248344736" type="System">
+                            <param id="0" name="Group name">&quot;First Start&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="732591000919812" type="System">
+                            <param id="0" name="Group name">&quot;Counting Time&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action behavior="Platform" id="4" name="Set jump strength" sid="352305313928009" type="obj_Karakter">
+                            <param id="0" name="Jump strength">800</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="450191816528195" type="System">
+                            <param id="0" name="Group name">&quot;Animation Manager&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="429922315712240" type="System">
+                            <param id="0" name="Group name">&quot;Dasar&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="438807810101356" title="ReverseBar">
+            <sub-events>
+                <event-block sid="862794369817720">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="815659199925489" type="obj_ReverseArrow">
+                            <param id="0" name="Object">obj_ReverseBar</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="638824906468669" type="System">
+                            <param id="0" name="Variable">ReverseSpedd</param>
+                            <param id="1" name="Value">obj_ReverseBar.Speed</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="251138080070836" title="MuterBalikSpeed">
+                    <sub-events>
+                        <event-block sid="831292437088424">
+                            <conditions>
+                                <condition behavior="Sine" id="0" inverted="1" name="Is active" sid="684745084172119" type="obj_ReverseArrow" />
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="643799759366495" type="System">
+                                    <param id="0" name="Group name">&quot;Controls&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action behavior="Platform" id="2" name="Set acceleration" sid="312796200438103" type="obj_Karakter">
+                                    <param id="0" name="Acceleration">ReverseSpedd</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="655204636684441" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;RenangFull&quot;</param>
+                                    <param id="1" name="From">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="640476487795679" type="System">
+                                    <param id="0" name="Group name">&quot;Muter Balik&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="718085002679739" type="System">
+                                    <param id="0" name="Group name">&quot;MuterBalikSpeed&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                            <sub-events>
+                                <event-block sid="217732590176161">
+                                    <conditions>
+                                        <condition id="-21" name="Is between values" sid="964940799723793" type="System">
+                                            <param id="0" name="Value">ReverseSpedd</param>
+                                            <param id="1" name="Lower bound">2000</param>
+                                            <param id="2" name="Upper bound">2500</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="466011350960051" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="346750970627930" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="280954852171027" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="959299670425339">
+                                    <conditions>
+                                        <condition id="-21" name="Is between values" sid="914694104664172" type="System">
+                                            <param id="0" name="Value">ReverseSpedd</param>
+                                            <param id="1" name="Lower bound">700</param>
+                                            <param id="2" name="Upper bound">1999</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="737229653689736" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">2</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="706645580786252" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="508417235264249" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="814907363984531">
+                                    <conditions>
+                                        <condition id="-21" name="Is between values" sid="251929060253957" type="System">
+                                            <param id="0" name="Value">ReverseSpedd</param>
+                                            <param id="1" name="Lower bound">0</param>
+                                            <param id="2" name="Upper bound">700</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="5" name="Set frame" sid="514375818807480" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">3</param>
+                                        </action>
+                                        <action id="-16" name="Wait" sid="424722842264709" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="897323630184245" type="pic_Appreciate">
+                                            <param id="0" name="Frame number">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-block sid="648119794619374">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="181442833774346" type="pic_ReverseBar" />
+                        <condition id="-9" inverted="1" name="Is visible" sid="333496874582769" type="pic_ReverseBar2" />
+                        <condition behavior="Sine" id="0" inverted="1" name="Is active" sid="758519906217692" type="obj_ReverseArrow" />
+                    </conditions>
+                    <actions>
+                        <action id="5" name="Set frame" sid="480817960260938" type="pic_Appreciate">
+                            <param id="0" name="Frame number">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="178733348174722">
+                    <conditions>
+                        <condition behavior="Sine" id="0" name="Is active" sid="543380202585594" type="obj_ReverseArrow" />
+                        <condition id="-14" name="Compare variable" sid="367035381446770" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="6" name="Set speed" sid="612584964025279" type="obj_Karakter">
+                            <param id="0" name="Speed">0</param>
+                        </action>
+                        <action id="-12" name="Set group active" sid="349612490601840" type="System">
+                            <param id="0" name="Group name">&quot;MuterBalikSpeed&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="436132821635625">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="504891872027182" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="7" name="Is mirrored" sid="150708367314397" type="pic_Renang" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="101513976892391" type="obj_ReverseArrow">
+                            <param id="0" name="Instance variable">Moving</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="862976501287071" type="System">
+                            <param id="0" name="Group name">&quot;Controls&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="879267439722861" type="obj_Karakter">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="822789544115862" type="obj_ReverseArrow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="192924499117695" type="pic_ReverseBar">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="851918769608027" type="obj_ReverseArrow">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="331830938410089" type="obj_Karakter">
+                            <param id="0" name="X">9049</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="847162515441420" type="obj_Karakter">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="190571391273720" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="726872208125204" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="608384767628547">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="723167482875199" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="854056705296595" type="System">
+                                    <param id="0" name="Group name">&quot;ArrowStop&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="257574713049344">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="164757211571029" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                        <condition id="7" inverted="1" name="Is mirrored" sid="814679467064050" type="pic_Renang" />
+                        <condition id="-8" name="Is boolean instance variable set" sid="793830660447740" type="obj_ReverseArrow">
+                            <param id="0" name="Instance variable">Moving</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="555479103161813" type="System">
+                            <param id="0" name="Group name">&quot;Controls&quot;</param>
+                            <param id="1" name="State">0</param>
+                        </action>
+                        <action behavior="Platform" id="2" name="Set acceleration" sid="956038324726206" type="obj_Karakter">
+                            <param id="0" name="Acceleration">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="311222770698315" type="obj_ReverseArrow">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="440802249285908" type="pic_ReverseBar2">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action behavior="Sine" id="0" name="Set active" sid="434093210206304" type="obj_ReverseArrow">
+                            <param id="0" name="State">1</param>
+                        </action>
+                        <action id="-1" name="Set X" sid="938718693849013" type="obj_Karakter">
+                            <param id="0" name="X">543</param>
+                        </action>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="892413556233348" type="obj_Karakter">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="731737495008053" type="System">
+                            <param id="0" name="Seconds">2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="683397280653590" type="System">
+                            <param id="0" name="Variable">SwimmingState</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="823354241153695">
+                            <conditions>
+                                <condition id="2" name="Is playing" sid="763291099381543" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-12" name="Set group active" sid="577123339351679" type="System">
+                                    <param id="0" name="Group name">&quot;ArrowStop&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="954189723812347">
+                    <conditions>
+                        <condition id="-9" inverted="1" name="Is visible" sid="810405633474479" type="obj_ReverseArrow" />
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Set group active" sid="692870640565154" type="System">
+                            <param id="0" name="Group name">&quot;Controls&quot;</param>
+                            <param id="1" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-group description="" sid="481335207634006" title="Muter Balik">
+                    <sub-events>
+                        <event-block sid="481345418872749">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="178267418390208" type="System">
+                                    <param id="0" name="Variable">SwimmingState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">3</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="260394358384762" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;MuterBalik&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="950850145760597" type="System">
+                                    <param id="0" name="Group name">&quot;Animation Manager&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="755987936760000">
+                            <conditions>
+                                <condition id="4" name="On finished" sid="310179515651526" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;MuterBalik&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="4" name="Set animation" sid="946013694930600" type="pic_Renang">
+                                    <param id="0" name="Animation">&quot;idle&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="383807815495411" type="System">
+                                    <param id="0" name="Group name">&quot;Animation Manager&quot;</param>
+                                    <param id="1" name="State">1</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="743877406309657" type="System">
+                                    <param id="0" name="Group name">&quot;Muter Balik&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+                <event-group description="" inactive="1" sid="225088684472354" title="ArrowStop">
+                    <sub-events>
+                        <event-block sid="981416373204781">
+                            <conditions>
+                                <condition id="3" name="On key released" sid="444305337350375" type="Keyboard">
+                                    <param id="0" name="Key">65 (A)</param>
+                                </condition>
+                                <condition id="2" name="Key is down" sid="150965666389842" type="Keyboard">
+                                    <param id="0" name="Key">68 (D)</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="611424135110641" type="obj_ReverseArrow">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="953595012359990" type="obj_ReverseArrow">
+                                    <param id="0" name="Instance variable">Moving</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="3" name="Start" sid="913952425971139" type="pic_Renang">
+                                    <param id="0" name="From">1</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="390896303097824" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="682616726187303" type="obj_ReverseArrow">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="374135883480847" type="pic_ReverseBar">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="919897882603718" type="pic_ReverseBar2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="577055613498696" type="System">
+                                    <param id="0" name="Group name">&quot;ArrowStop&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="207388026778161" type="obj_ReverseArrow">
+                                    <param id="0" name="Instance variable">Moving</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="320887905808689">
+                            <conditions>
+                                <condition id="4" name="Is touching object" sid="555467087010990" type="Touch">
+                                    <param id="0" name="Object">btn_TouchR</param>
+                                </condition>
+                                <condition id="4" name="Is touching object" sid="338797858139470" type="Touch">
+                                    <param id="0" name="Object">btn_TouchL</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action behavior="Sine" id="0" name="Set active" sid="357984083506369" type="obj_ReverseArrow">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="354753705702491" type="obj_ReverseArrow">
+                                    <param id="0" name="Instance variable">Moving</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="727155325749565" type="System">
+                                    <param id="0" name="Seconds">3</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="114184363769589" type="obj_ReverseArrow">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="515815542477666" type="pic_ReverseBar">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="635849540175078" type="pic_ReverseBar2">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-12" name="Set group active" sid="780473389406390" type="System">
+                                    <param id="0" name="Group name">&quot;ArrowStop&quot;</param>
+                                    <param id="1" name="State">0</param>
+                                </action>
+                                <action id="-13" name="Set boolean" sid="915021116803528" type="obj_ReverseArrow">
+                                    <param id="0" name="Instance variable">Moving</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-group>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="477629967940647" title="Animation Manager">
+            <sub-events>
+                <event-block sid="359698295345258">
+                    <conditions>
+                        <condition behavior="Platform" id="9" name="On landed" sid="587816353610398" type="obj_Karakter" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="567187128611199" type="pic_Renang">
+                            <param id="0" name="Animation">&quot;RenangFull&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="988005099094305" type="pic_Renang">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="651347062913289">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="641213725967231" type="System">
+                                    <param id="0" name="First value">obj_Karakter.Platform.Acceleration</param>
+                                    <param id="1" name="Comparison">4</param>
+                                    <param id="2" name="Second value">1000</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="135929241795444" type="pic_Renang">
+                                    <param id="0" name="Speed">15</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="232321826484308">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="461299109777033" type="System">
+                                    <param id="0" name="First value">obj_Karakter.Platform.Acceleration</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Second value">1000</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="6" name="Set speed" sid="882139095978863" type="pic_Renang">
+                                    <param id="0" name="Speed">10</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="657305126534958">
+                    <conditions>
+                        <condition behavior="Platform" id="8" name="On moved" sid="287363553730313" type="obj_Karakter" />
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="590631849559092" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">10</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="863004509701099" type="pic_Renang">
+                            <param id="0" name="Animation">&quot;RenangFull&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                        <action id="3" name="Start" sid="335676976656616" type="pic_Renang">
+                            <param id="0" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="881229055941977">
+                    <conditions>
+                        <condition behavior="Platform" id="3" name="Is jumping" sid="653901841014744" type="obj_Karakter" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="486630226939968" type="pic_Renang">
+                            <param id="0" name="Animation">&quot;Dive&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="143203216398665">
+                    <conditions>
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="450075631684974" type="obj_Karakter">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Speed">0</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="257408700515516" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">750</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="565953132098846" type="pic_Renang">
+                            <param id="0" name="Animation">&quot;idle&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="827001581296725">
+                    <conditions>
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="803489115276587" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">5</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="324990819393108" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">750</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="911304854966451" type="pic_Renang">
+                            <param id="0" name="Animation">&quot;RenangFull&quot;</param>
+                            <param id="1" name="From">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="911920676356737">
+                    <conditions>
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="603404042440015" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">5</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="462749287015067" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">750</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="966972209674067" type="pic_efekair">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="118892583550576">
+                    <conditions>
+                        <condition behavior="Platform" id="1" name="Compare speed" sid="723759138167260" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Speed">5</param>
+                        </condition>
+                        <condition id="-2" name="Compare Y" sid="769928712950460" type="obj_Karakter">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="Y co-ordinate">750</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="468547571092107" type="pic_efekair">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="716051849265494">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="575013352927957" type="obj_Karakter">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="Y co-ordinate">800</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="528568859548676" type="pic_efekair">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="131211869807017">
+            <conditions>
+                <condition id="0" name="On completed" sid="125822476077106" type="AJAX">
+                    <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <comment>please Save DeviceID to LocalStorage after Set Device ID to AJAX.Last Data</comment>
+                <event-block sid="647009956105747">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="114542913547396" type="System">
+                            <param id="0" name="Variable">Data_deviceID</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="600300566369908" type="System">
+                            <param id="0" name="Variable">Data_deviceID</param>
+                            <param id="1" name="Value">tokenat(AJAX.LastData,1, &quot;|&quot;)</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="435988511815804" type="System">
+                            <param id="0" name="Variable">Data_id</param>
+                            <param id="1" name="Value">tokenat(AJAX.LastData,0, &quot;|&quot;)</param>
+                        </action>
+                        <action id="0" name="Set item" sid="972502323215626" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_deviceid&quot;</param>
+                            <param id="1" name="Value">Data_deviceID</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="547172335929425" type="System">
+                            <param id="0" name="Layout">lay5 - Leaderboard</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="498513759036919">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="416434794457482" type="System">
+                            <param id="0" name="Variable">Data_deviceID</param>
+                            <param id="1" name="Comparison">1</param>
+                            <param id="2" name="Value">&quot;&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="328586380482023" type="System">
+                            <param id="0" name="Variable">Data_id</param>
+                            <param id="1" name="Value">tokenat(AJAX.LastData,0, &quot;|&quot;)</param>
+                        </action>
+                        <action id="-2" name="Go to layout" sid="606203744582800" type="System">
+                            <param id="0" name="Layout">lay5 - Leaderboard</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="834503791604080">
+            <conditions>
+                <condition id="1" name="On error" sid="365542657844006" type="AJAX">
+                    <param id="0" name="Tag">&quot;SetScore&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="237958568663612" type="System">
+                    <param id="0" name="Layout">lay5 - Leaderboard</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

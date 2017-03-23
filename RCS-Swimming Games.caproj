@@ -1,0 +1,1051 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>RCS-Swimming Games</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>24200</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="AJAX" version="1">AJAX</plugin>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
+        <plugin author="Scirra" id="Button" version="1">Button</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>1920</width>
+        <height>1080</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Progress bar only</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="obj_PlatformBase" sid="674030181246519">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="974196107613855">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="868656089594417" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_Karakter" sid="227611393909191">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="267879657577352">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="354994170374316">
+                    <behavior id="scrollto" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="668988415082923">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="370451401417557" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+                <animation framecount="4" loop="0" name="RenangL" pingpong="0" repeatcount="1" repeatto="0" sid="138164512670054" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\4.png" />
+                </animation>
+                <animation framecount="4" loop="0" name="RenangR" pingpong="0" repeatcount="1" repeatto="0" sid="598131458476783" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\6.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\7.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\Animasi renang\8.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_Bottom" sid="199060649336149">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="643767585181133" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_Watre" sid="956700543771904">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="861582333233273" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_Surface" sid="909416062924676">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="381484084122984">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="325886834822171" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_Obstacle" sid="833890219825802">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="422167967142398">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="310279445856410">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="309178868014920" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.503185" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bar + obstcle\obs.png">
+                        <collision-poly>
+                            <point x="0.0935484" y="0.184713" />
+                            <point x="0.5" y="0" />
+                            <point x="0.906452" y="0.184713" />
+                            <point x="0.983871" y="0.496815" />
+                            <point x="0.877419" y="0.757962" />
+                            <point x="0.5" y="0.904459" />
+                            <point x="0.122581" y="0.757962" />
+                            <point x="0.016129" y="0.496815" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="662911335410663">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="BG_Kiri" sid="977210054694655">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="639172288580957" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg renang baru\bg\kiri.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BG_Kanan" sid="140333624754743">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="149696955172975" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg renang baru\bg\kanan.png">
+                        <collision-poly>
+                            <point x="0.08125" y="0.144444" />
+                            <point x="0.91875" y="0.144444" />
+                            <point x="1" y="0.5" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="BG_tengah" sid="839837304024786">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg renang baru\bg\tengah.png" />
+        </object-type>
+        <object-type name="obj_water" sid="288504993167246">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\transparan air.png" />
+        </object-type>
+        <object-type name="obj_TaliBawah" sid="493465146525776">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\pembatas depan.png" />
+        </object-type>
+        <object-type name="obj_Pijakan" sid="545472119942137">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="384958255003001">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="337143115861280" speed="5">
+                    <frame duration="1" hotspotX="0.50303" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\tempat lonat.png">
+                        <collision-poly>
+                            <point x="0.0666667" y="0.0561224" />
+                            <point x="0.49697" y="0" />
+                            <point x="1" y="0" />
+                            <point x="0.975758" y="0.979592" />
+                            <point x="0.49697" y="1" />
+                            <point x="0.00606061" y="0.994898" />
+                            <point x="0.0545455" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_TouchL" sid="619252010104124">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="203622721891215" speed="5">
+                    <frame duration="1" hotspotX="0.503676" hotspotY="0.501845" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\btn kiri kanan.png">
+                        <collision-poly>
+                            <point x="0.149798" y="0.149798" />
+                            <point x="0.497976" y="0" />
+                            <point x="0.850202" y="0.149798" />
+                            <point x="1" y="0.497976" />
+                            <point x="0.850202" y="0.850202" />
+                            <point x="0.497976" y="1" />
+                            <point x="0.149798" y="0.850202" />
+                            <point x="0" y="0.497976" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_TouchR" sid="682908350865607">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="127415817964447" speed="5">
+                    <frame duration="1" hotspotX="0.503676" hotspotY="0.501845" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\btn kiri kanan.png">
+                        <collision-poly>
+                            <point x="0.149798" y="0.149798" />
+                            <point x="0.497976" y="0" />
+                            <point x="0.850202" y="0.149798" />
+                            <point x="1" y="0.497976" />
+                            <point x="0.850202" y="0.850202" />
+                            <point x="0.497976" y="1" />
+                            <point x="0.149798" y="0.850202" />
+                            <point x="0" y="0.497976" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Touch" sid="276144305576823">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="pic_Renang" sid="710949426578431">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="865574755849308">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="5" loop="0" name="FirstJump" pingpong="0" repeatcount="1" repeatto="0" sid="109633201973357" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi loncat\loncat2\1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi loncat\loncat2\2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi loncat\loncat2\3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi loncat\loncat2\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi loncat\loncat2\5.png" />
+                </animation>
+                <animation framecount="3" loop="0" name="MuterBalik" pingpong="0" repeatcount="0" repeatto="0" sid="850518638526813" speed="5">
+                    <frame duration="1" hotspotX="0.488462" hotspotY="0.286538" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\butar balik\1.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.275" hotspotY="0.415385" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\butar balik\2.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.221154" hotspotY="0.617308" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\butar balik\3.png">
+                        <collision-poly>
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="7" loop="1" name="RenangFull" pingpong="0" repeatcount="1" repeatto="0" sid="752619628002498" speed="10">
+                    <frame duration="1" hotspotX="0.50108" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\1.png" />
+                    <frame duration="1" hotspotX="0.501062" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\2.png" />
+                    <frame duration="1" hotspotX="0.501188" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\3.png" />
+                    <frame duration="1" hotspotX="0.501114" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\4.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\6.png" />
+                    <frame duration="1" hotspotX="0.501099" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\kacamata\7.png" />
+                </animation>
+                <animation framecount="2" loop="0" name="Dive" pingpong="0" repeatcount="1" repeatto="0" sid="949629282264998" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\nyelem\5.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502762" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\nyelem\6.png" />
+                </animation>
+                <animation framecount="1" loop="0" name="Luncur" pingpong="0" repeatcount="1" repeatto="0" sid="909265102624541" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\animasi renang\butar balik\4.png">
+                        <collision-poly>
+                            <point x="0.5" y="0.376923" />
+                            <point x="0.613462" y="0.386538" />
+                            <point x="0.653846" y="0.5" />
+                            <point x="0.644231" y="0.644231" />
+                            <point x="0.5" y="0.663462" />
+                            <point x="0.346154" y="0.653846" />
+                            <point x="0.025" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="4" loop="1" name="idle" pingpong="1" repeatcount="1" repeatto="0" sid="824253443148063" speed="8">
+                    <frame duration="1" hotspotX="0.482692" hotspotY="0.382692" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\idle\1.png">
+                        <collision-poly>
+                            <point x="0.409615" y="0.409615" />
+                            <point x="0.5" y="0.0769231" />
+                            <point x="0.648077" y="0.351923" />
+                            <point x="0.567308" y="0.5" />
+                            <point x="0.511538" y="0.511538" />
+                            <point x="0.5" y="0.896154" />
+                            <point x="0.376923" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.482692" hotspotY="0.382692" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\idle\2.png" />
+                    <frame duration="1" hotspotX="0.482692" hotspotY="0.382692" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\idle\3.png" />
+                    <frame duration="1" hotspotX="0.482692" hotspotY="0.382692" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\idle+nyelem\idle\4.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Browser" sid="455378819751490">
+            <plugin id="Browser" />
+        </object-type>
+        <object-type name="pic_ReverseBar" sid="285486872220761">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="379486334390478" speed="5">
+                    <frame duration="1" hotspotX="0.494845" hotspotY="0.50365" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg air\_0001_Vector-Smart-Object-copy-14.png">
+                        <collision-poly>
+                            <point x="0.834532" y="0.0318119" />
+                            <point x="0.877698" y="0.499308" />
+                            <point x="0.834532" y="0.968188" />
+                            <point x="0.165468" y="0.968188" />
+                            <point x="0.122302" y="0.499308" />
+                            <point x="0.165468" y="0.0318119" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_Laps" sid="486155232867671">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="808416198743241" speed="5">
+                    <frame duration="1" hotspotX="0.501538" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\laps.png">
+                        <collision-poly>
+                            <point x="0.0184615" y="0.06" />
+                            <point x="0.498462" y="0" />
+                            <point x="0.981538" y="0.06" />
+                            <point x="0.975385" y="0.92" />
+                            <point x="0.498462" y="0.95" />
+                            <point x="0.0246154" y="0.92" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_BGtime" sid="535691473998487">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="887950212020501" speed="5">
+                    <frame duration="1" hotspotX="0.501538" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\number.png">
+                        <collision-poly>
+                            <point x="0.0184615" y="0.06" />
+                            <point x="0.498462" y="0.03" />
+                            <point x="0.981538" y="0.06" />
+                            <point x="0.993846" y="0.5" />
+                            <point x="0.981538" y="0.94" />
+                            <point x="0.498462" y="0.98" />
+                            <point x="0.0184615" y="0.94" />
+                            <point x="0.00615385" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sf_Menit" sid="922558607765786">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\font putih.png" />
+        </object-type>
+        <object-type name="sf_Detik" sid="263621706844663">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\font putih.png" />
+        </object-type>
+        <object-type name="sf_MiliDetik" sid="553548989588889">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\font putih.png" />
+        </object-type>
+        <object-type name="sf_Text" sid="955355103699210">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\font putih.png" />
+        </object-type>
+        <object-type name="sf_Laps" sid="242784607001136">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\font2_2\font putih.png" />
+        </object-type>
+        <object-type name="pic_BarBG" sid="759448102541940">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="591592422667174" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.508772" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bar + obstcle\icon di pisah\bar.png">
+                        <collision-poly>
+                            <point x="0.0204301" y="0.246753" />
+                            <point x="0.5" y="0.246753" />
+                            <point x="0.983871" y="0.194805" />
+                            <point x="0.994624" y="0.493506" />
+                            <point x="0.983871" y="0.805195" />
+                            <point x="0.0182796" y="0.779221" />
+                            <point x="0.0107527" y="0.493506" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_BarFill" sid="297287928406643">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bar + obstcle\bar isi.png" />
+        </object-type>
+        <object-type name="pic_BarIndct" sid="155474713129939">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="661630149264487" speed="5">
+                    <frame duration="1" hotspotX="0.505618" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\Apresiasi\icon manusia.png">
+                        <collision-poly>
+                            <point x="0.202247" y="0.346154" />
+                            <point x="0.494382" y="0.0961538" />
+                            <point x="0.865169" y="0.230769" />
+                            <point x="0.977528" y="0.5" />
+                            <point x="0.797753" y="0.653846" />
+                            <point x="0.494382" y="0.788462" />
+                            <point x="0.202247" y="0.653846" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_Penonton" sid="445376258973735">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\penonton.png" />
+        </object-type>
+        <object-type name="pic_efekair" sid="435967323554682">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="361722764597092" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\New folder\efek air.png">
+                        <collision-poly>
+                            <point x="0.5" y="0" />
+                            <point x="0.722222" y="0.5" />
+                            <point x="0.982906" y="0.2" />
+                            <point x="0.5" y="0.6" />
+                            <point x="0.384615" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_ReverseBar" sid="691587358022119">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Speed" sid="196973751142726" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Pin" sid="523968411026659">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="331364343782067" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="obj_ReverseArrow" sid="522877061773529">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Moving" sid="311942635131176" type="boolean" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Sine" sid="418143127062091">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="435587577414398" speed="5">
+                    <frame duration="1" hotspotX="0.511111" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg air\_0000_Polygon-1-copy-4.png">
+                        <collision-poly>
+                            <point x="0.133333" y="0.142857" />
+                            <point x="0.711111" y="0.309524" />
+                            <point x="0.888889" y="0.5" />
+                            <point x="0.711111" y="0.690476" />
+                            <point x="0.133333" y="0.857143" />
+                            <point x="0.0888889" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_ReverseBar2" sid="316592072482001">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="575072136880957" speed="5">
+                    <frame duration="1" hotspotX="0.505155" hotspotY="0.50365" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg air\_0001_Vector-Smart-Object-copy-14.png">
+                        <collision-poly>
+                            <point x="0.834532" y="0.0318119" />
+                            <point x="0.877698" y="0.499308" />
+                            <point x="0.834532" y="0.968188" />
+                            <point x="0.165468" y="0.968188" />
+                            <point x="0.122302" y="0.499308" />
+                            <point x="0.165468" y="0.0318119" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AJAX" sid="616909820149715">
+            <plugin id="AJAX" />
+        </object-type>
+        <object-type name="btn_Start" sid="623497394709019">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="126461193839919" speed="5">
+                    <frame duration="1" hotspotX="0.501027" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\menu awal\btn_start.png">
+                        <collision-poly>
+                            <point x="0.0472279" y="0.136905" />
+                            <point x="0.498973" y="0.0892857" />
+                            <point x="0.954825" y="0.130952" />
+                            <point x="0.952772" y="0.863095" />
+                            <point x="0.498973" y="0.904762" />
+                            <point x="0.0492813" y="0.857143" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_Muter" sid="298560176760754">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="235562967900223" speed="5">
+                    <frame duration="1" hotspotX="0.507042" hotspotY="0.506494" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bar + obstcle\icon di pisah\putaran.png">
+                        <collision-poly>
+                            <point x="0.197183" y="0.181818" />
+                            <point x="0.492958" y="0.0519481" />
+                            <point x="0.802817" y="0.181818" />
+                            <point x="0.943662" y="0.493506" />
+                            <point x="0.760563" y="0.779221" />
+                            <point x="0.492958" y="0.87013" />
+                            <point x="0.239437" y="0.779221" />
+                            <point x="0.056338" y="0.493506" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_jam" sid="557949421842264">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="183710503464123" speed="5">
+                    <frame duration="1" hotspotX="0.506667" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bar + obstcle\icon di pisah\stop watch.png">
+                        <collision-poly>
+                            <point x="0.2" y="0.182927" />
+                            <point x="0.493333" y="0.0487805" />
+                            <point x="0.786667" y="0.195122" />
+                            <point x="0.92" y="0.5" />
+                            <point x="0.76" y="0.780488" />
+                            <point x="0.493333" y="0.878049" />
+                            <point x="0.226667" y="0.792683" />
+                            <point x="0.0533333" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_SponsorAgate" sid="172754145272221">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="381698594669117" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\agate logo.png">
+                        <collision-poly>
+                            <point x="0.00234742" y="0.00649351" />
+                            <point x="0.997653" y="0.00649351" />
+                            <point x="0.997653" y="0.993506" />
+                            <point x="0.00234742" y="0.993506" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Button" sid="496547323851167">
+            <plugin id="Button" />
+        </object-type>
+        <object-type name="dbg_Speed" sid="857793700524549">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="pic_Title" sid="342828677294778">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="748889704631646">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="356652321934744" speed="5">
+                    <frame duration="1" hotspotX="0.500838" hotspotY="0.500838" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\update ganti judul\judul baru.png">
+                        <collision-poly>
+                            <point x="0.205598" y="0.356784" />
+                            <point x="0.5" y="0.0686767" />
+                            <point x="0.799228" y="0.348409" />
+                            <point x="0.734556" y="0.499162" />
+                            <point x="0.794402" y="0.643216" />
+                            <point x="0.5" y="0.921273" />
+                            <point x="0.205598" y="0.643216" />
+                            <point x="0.243243" y="0.499162" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_BG1" sid="335601265896248">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="CustomMovement" sid="925561019424790">
+                    <behavior id="custom" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\menu awal\bg menu awal.png" />
+        </object-type>
+        <object-type name="pic_LeaderBoard" sid="823609822400072">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="925677026689287" speed="5">
+                    <frame duration="1" hotspotX="0.500421" hotspotY="0.500511" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\update ganti judul\leaderboard.png">
+                        <collision-poly>
+                            <point x="0.0260723" y="0.031665" />
+                            <point x="0.499579" y="0" />
+                            <point x="0.989066" y="0.0132789" />
+                            <point x="0.994113" y="0.99285" />
+                            <point x="0.499579" y="0.995914" />
+                            <point x="0.0336417" y="0.959142" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pic_ResultBar" sid="132572605749127">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="184021823828919" speed="5">
+                    <frame duration="1" hotspotX="0.500421" hotspotY="0.50053" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\update ganti judul\result.png">
+                        <collision-poly>
+                            <point x="0.0260723" y="0.0328738" />
+                            <point x="0.499579" y="0" />
+                            <point x="0.989066" y="0.0137858" />
+                            <point x="0.994113" y="0.992577" />
+                            <point x="0.499579" y="0.995758" />
+                            <point x="0.0311186" y="0.960764" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tb_Email" sid="927814783632325">
+            <plugin id="TextBox" />
+        </object-type>
+        <object-type name="sf_Result" sid="328709887425220">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="btn_Skip" sid="459693028590780">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Clicked" sid="332416364728061" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="363942940785442" speed="5">
+                    <frame duration="1" hotspotX="0.501961" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\result\btn skip.png">
+                        <collision-poly>
+                            <point x="0.0470588" y="0.117647" />
+                            <point x="0.498039" y="0.117647" />
+                            <point x="0.941176" y="0.147059" />
+                            <point x="0.956863" y="0.5" />
+                            <point x="0.941176" y="0.852941" />
+                            <point x="0.0509804" y="0.872549" />
+                            <point x="0.0235294" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_LeaderBoard" sid="123243354238099">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="360607971857529" speed="5">
+                    <frame duration="1" hotspotX="0.501832" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\result\btn_leaderboards2.png">
+                        <collision-poly>
+                            <point x="0.047619" y="0.13" />
+                            <point x="0.498168" y="0.1" />
+                            <point x="0.937729" y="0.17" />
+                            <point x="0.937729" y="0.83" />
+                            <point x="0.498168" y="0.89" />
+                            <point x="0.0512821" y="0.86" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_Submit" sid="774217399889855">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Clicked" sid="409987937528788" type="boolean" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="882914412966044" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\result\btn_submit.png">
+                        <collision-poly>
+                            <point x="0.0458015" y="0.136364" />
+                            <point x="0.5" y="0.0568182" />
+                            <point x="0.950382" y="0.147727" />
+                            <point x="0.954198" y="0.863636" />
+                            <point x="0.5" y="0.931818" />
+                            <point x="0.0458015" y="0.863636" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="txt_EmailStatus" sid="628832211086271">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="LocalStorage" sid="326397249178336">
+            <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="pic_fadeout" sid="253691119382885">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="584750124253439">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="217568745015100" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="sf_Font2" sid="955714534277283">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank2Score" sid="503579232886503">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank3Score" sid="239399072145578">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank4Score" sid="210710473460346">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank5Score" sid="425822433914123">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank6Score" sid="444651443362860">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_YourScore" sid="985523314333655">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank1DeviceID" sid="830860889896571">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank2DeviceID" sid="787853200287120">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank3DeviceID" sid="445384358018837">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank4DeviceID" sid="631218693442413">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank5DeviceID" sid="328718276485675">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank6DeviceID" sid="768283696327802">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_YourDeviceID" sid="619071804331091">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="lb_Rank1Score" sid="730986047836764">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="pic_Appreciate" sid="584563183686212">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="286625602964943">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="845867347490332" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\Apresiasi\GOOD!.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\Apresiasi\BAD!.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="dbg_Acc" sid="651500818718729">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="BG_Tutorial" sid="172778033565348">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="827568238204497" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Abdis\Desktop\bg tutorial.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TapSprite" sid="873783195363619">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="146706351853509" speed="5">
+                    <frame duration="1" hotspotX="0.503817" hotspotY="0.503817" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\tap.png">
+                        <collision-poly>
+                            <point x="0.145038" y="0.145038" />
+                            <point x="0.496183" y="0" />
+                            <point x="0.854962" y="0.145038" />
+                            <point x="1" y="0.496183" />
+                            <point x="0.854962" y="0.854962" />
+                            <point x="0.496183" y="1" />
+                            <point x="0.145038" y="0.854962" />
+                            <point x="0" y="0.496183" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.504673" hotspotY="0.504673" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\polos.png">
+                        <collision-poly>
+                            <point x="0.196262" y="0.196262" />
+                            <point x="0.495327" y="0" />
+                            <point x="0.803738" y="0.196262" />
+                            <point x="1" y="0.495327" />
+                            <point x="0.803738" y="0.803738" />
+                            <point x="0.495327" y="1" />
+                            <point x="0.196262" y="0.803738" />
+                            <point x="0" y="0.495327" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TapSprite2" sid="462977741025423">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="813340188044092" speed="5">
+                    <frame duration="1" hotspotX="0.504673" hotspotY="0.504673" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\polos.png">
+                        <collision-poly>
+                            <point x="0.196262" y="0.196262" />
+                            <point x="0.495327" y="0" />
+                            <point x="0.803738" y="0.196262" />
+                            <point x="1" y="0.495327" />
+                            <point x="0.803738" y="0.803738" />
+                            <point x="0.495327" y="1" />
+                            <point x="0.196262" y="0.803738" />
+                            <point x="0" y="0.495327" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.503817" hotspotY="0.503817" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\tap.png">
+                        <collision-poly>
+                            <point x="0.145038" y="0.145038" />
+                            <point x="0.496183" y="0" />
+                            <point x="0.854962" y="0.145038" />
+                            <point x="1" y="0.496183" />
+                            <point x="0.854962" y="0.854962" />
+                            <point x="0.496183" y="1" />
+                            <point x="0.145038" y="0.854962" />
+                            <point x="0" y="0.496183" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TapHold" sid="555394078440718">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="226985319767674" speed="5">
+                    <frame duration="1" hotspotX="0.504673" hotspotY="0.504673" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\polos.png" />
+                    <frame duration="3" hotspotX="0.488372" hotspotY="0.511628" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\tutorial\tutorial\hold.png">
+                        <collision-poly>
+                            <point x="0.147287" y="0.147287" />
+                            <point x="0.496124" y="0" />
+                            <point x="0.852713" y="0.147287" />
+                            <point x="1" y="0.496124" />
+                            <point x="0.852713" y="0.852713" />
+                            <point x="0.496124" y="1" />
+                            <point x="0.147287" y="0.852713" />
+                            <point x="0" y="0.496124" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="btn_Next" sid="987750455050831">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="669952865999092" speed="5">
+                    <frame duration="1" hotspotX="0.501961" hotspotY="0.5" original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\result\btn skip.png">
+                        <collision-poly>
+                            <point x="0.0470588" y="0.117647" />
+                            <point x="0.498039" y="0.117647" />
+                            <point x="0.941176" y="0.147059" />
+                            <point x="0.956863" y="0.5" />
+                            <point x="0.941176" y="0.852941" />
+                            <point x="0.0509804" y="0.872549" />
+                            <point x="0.0235294" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lb_YourRank" sid="989858350351307">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type global="1" name="Array" sid="315902909054777">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Text" sid="653291047758195">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="RunningText" sid="283002030441534">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Wrap" sid="855040457190703">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="582242689441211">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="RunningText2" sid="307431694102687">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="451104998249740">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="351744808615995">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
+        <object-type name="sf_Result2" sid="186731907920889">
+            <plugin id="Spritefont2" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\new update\font2.png" />
+        </object-type>
+        <object-type name="TiledBackground" sid="598018660534750">
+            <plugin id="TiledBg" />
+            <texture original-source="E:\PENS\COLLEGE COURSE\Kelas 3\SEMESTER 5\#KP AGATE STUDIO\OnGoing\RCS-SwimmingGames\#Asset\bg renang baru\bg\tengah air.png" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Lay1 - Menu.xml</layout>
+        <layout>Lay2 - Tutorial.xml</layout>
+        <layout>Lay3 - Swimming Games.xml</layout>
+        <layout>lay5 - Leaderboard.xml</layout>
+        <layout>Lay4 - Result.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>E_Menu.xml</event-sheet>
+        <event-sheet>E_Tutorial.xml</event-sheet>
+        <event-sheet>E_Game.xml</event-sheet>
+        <event-sheet>E_Result.xml</event-sheet>
+        <event-sheet>E_Leaderboard.xml</event-sheet>
+        <event-sheet>GameData.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="7" />
+        <global-instance type="Touch" uid="19">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Browser" uid="21" />
+        <global-instance type="AJAX" uid="55" />
+        <global-instance type="LocalStorage" uid="56" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>

@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Leaderboard</name>
+    <events>
+        <event-block sid="294824083529729">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="113838247467028" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="447785815700086" type="AJAX">
+                    <param id="0" name="Tag">&quot;LBFetch&quot;</param>
+                    <param id="1" name="URL">GetLeaderBoard&amp;GetLimitLB</param>
+                </action>
+                <action id="0" name="Request URL" sid="683397944596792" type="AJAX">
+                    <param id="0" name="Tag">&quot;MyRank&quot;</param>
+                    <param id="1" name="URL">GetRank&amp;Data_id&amp;GetDeviceID&amp;Data_deviceID</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="841676213597725">
+            <conditions>
+                <condition id="0" name="On completed" sid="250384523966949" type="AJAX">
+                    <param id="0" name="Tag">&quot;LBFetch&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="838048838959442" type="lb_Rank1DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,0,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="129788160535692" type="lb_Rank1Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,1,&quot;|&quot;) &amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="681674747947762" type="lb_Rank2DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,2,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="242123586142614" type="lb_Rank2Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,3,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="838768795805876" type="lb_Rank3DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,4,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="336231139700205" type="lb_Rank3Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,5,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="215917953920587" type="lb_Rank4DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,6,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="915480320117239" type="lb_Rank4Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,7,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="555886448829835" type="lb_Rank5DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,8,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="806113803511383" type="lb_Rank5Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,9,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="314744518599929" type="lb_Rank6DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,10,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="994794638933933" type="lb_Rank6Score">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,11,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="-9" name="Set value" sid="895512118244375" type="System">
+                    <param id="0" name="Variable">Data_LeaderBoard</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="821210276203115" type="LocalStorage">
+                    <param id="0" name="Key">&quot;data_leaderboard&quot;</param>
+                    <param id="1" name="Value">Data_LeaderBoard</param>
+                </action>
+                <action id="0" name="Request URL" sid="824600430379308" type="AJAX">
+                    <param id="0" name="Tag">&quot;LastPlay&quot;</param>
+                    <param id="1" name="URL">GetLeaderTimeStamp&amp;GetLimitTS</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="788554752145063">
+            <conditions>
+                <condition id="0" name="On completed" sid="689105494974680" type="AJAX">
+                    <param id="0" name="Tag">&quot;MyRank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="563447365601518" type="lb_YourDeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(AJAX.LastData,0,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="925116752352537" type="lb_YourScore">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,1,&quot;|&quot;)&amp; &quot; laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="255515017203785" type="lb_YourRank">
+                    <param id="0" name="Text">tokenat(AJAX.LastData,2,&quot;|&quot;)</param>
+                </action>
+                <action id="-9" name="Set value" sid="354107386368951" type="System">
+                    <param id="0" name="Variable">Data_Rank</param>
+                    <param id="1" name="Value">AJAX.LastData</param>
+                </action>
+                <action id="0" name="Set item" sid="164904866968331" type="LocalStorage">
+                    <param id="0" name="Key">&quot;data_rank&quot;</param>
+                    <param id="1" name="Value">Data_Rank</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="530051875669146">
+            <conditions>
+                <condition id="1" name="On error" sid="982537994932338" type="AJAX">
+                    <param id="0" name="Tag">&quot;LBFetch&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="731574144313790" type="lb_Rank1DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,0,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="415689062824825" type="lb_Rank1Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,1,&quot;|&quot;) &amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="218052122214254" type="lb_Rank2DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,2,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="886090769948212" type="lb_Rank2Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,3,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="213577696361890" type="lb_Rank3DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,4,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="928872709178402" type="lb_Rank3Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,5,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="649109962508392" type="lb_Rank4DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,6,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="432706558917445" type="lb_Rank4Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,7,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="410562477446673" type="lb_Rank5DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,8,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="941583751969019" type="lb_Rank5Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,9,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+                <action id="0" name="Set text" sid="841485341439093" type="lb_Rank6DeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_LeaderBoard,10,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="489422961793301" type="lb_Rank6Score">
+                    <param id="0" name="Text">tokenat(Data_LeaderBoard,11,&quot;|&quot;)&amp;&quot;laps&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="881388977010208">
+            <conditions>
+                <condition id="1" name="On error" sid="719294568668939" type="AJAX">
+                    <param id="0" name="Tag">&quot;MyRank&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="748504570847539" type="lb_YourDeviceID">
+                    <param id="0" name="Text">&quot;user&quot;&amp;tokenat(Data_Rank,0,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="835015147808915" type="lb_YourScore">
+                    <param id="0" name="Text">tokenat(Data_Rank,1,&quot;|&quot;)</param>
+                </action>
+                <action id="0" name="Set text" sid="393399218769887" type="lb_YourRank">
+                    <param id="0" name="Text">tokenat(Data_Rank,2,&quot;|&quot;)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="318114568547978">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="445677423112166" type="Touch">
+                    <param id="0" name="Object">btn_Skip</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="958130046071967" type="btn_Skip">
+                    <param id="0" name="Scale">0.95</param>
+                </action>
+                <action id="-16" name="Wait" sid="455118183412179" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="9" name="Set scale" sid="927950270871932" type="btn_Skip">
+                    <param id="0" name="Scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="328930159561472">
+            <conditions>
+                <condition id="17" name="On tap object" sid="735704723529186" type="Touch">
+                    <param id="0" name="Object">btn_Skip</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="842795762466945" type="System">
+                    <param id="0" name="Layout">Lay1 - Menu</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

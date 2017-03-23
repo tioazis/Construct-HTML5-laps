@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>GameData</name>
+    <events>
+        <variable constant="0" name="Data_id" sid="183769820850630" static="0" type="number">0</variable>
+        <variable constant="0" name="Data_score" sid="210454555011281" static="0" type="number">0</variable>
+        <variable constant="0" name="Data_LeaderBoard" sid="450937133426488" static="0" type="text"></variable>
+        <variable constant="0" name="Data_LastestPlays" sid="265590728876928" static="0" type="text"></variable>
+        <variable constant="0" name="Data_deviceID" sid="744129812034240" static="0" type="text"></variable>
+        <variable constant="0" name="Data_email" sid="886103895759751" static="0" type="text"></variable>
+        <variable constant="0" name="Data_Rank" sid="872928254559286" static="0" type="text"></variable>
+        <variable constant="0" name="GetLeaderTimeStamp" sid="756941414061442" static="0" type="text">http://charitygame.herokuapp.com/index.php/?action=getTS&amp;limit=</variable>
+        <variable constant="0" name="GetLeaderBoard" sid="385149582391889" static="0" type="text">http://charitygame.herokuapp.com/index.php/?action=getLB&amp;limit=</variable>
+        <variable constant="0" name="GetRank" sid="806166942453947" static="0" type="text">http://charitygame.herokuapp.com/index.php/?action=getRank&amp;id=</variable>
+        <variable constant="0" name="GetDeviceID" sid="540344531848190" static="0" type="text">&amp;deviceid=</variable>
+        <variable constant="0" name="GetLimitTS" sid="766195023494701" static="0" type="text">6</variable>
+        <variable constant="0" name="GetLimitLB" sid="217128145251208" static="0" type="text">6</variable>
+        <variable constant="0" name="SetDeviceId" sid="994614526607395" static="0" type="text">&amp;deviceid=</variable>
+        <variable constant="0" name="SetEmail" sid="800450698994081" static="0" type="text">http://charitygame.herokuapp.com/index.php/?action=setscore&amp;email=</variable>
+        <variable constant="0" name="SetScore" sid="362341793945621" static="0" type="text">&amp;score=</variable>
+    </events>
+</c2eventsheet>

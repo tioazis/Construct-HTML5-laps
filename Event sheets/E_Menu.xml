@@ -1,0 +1,183 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>E_Menu</name>
+    <events>
+        <variable constant="0" name="RunningText" sid="906157284161235" static="0" type="text"></variable>
+        <event-block sid="751214738491039">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="693638807246055" type="Touch">
+                    <param id="0" name="Object">btn_Start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="9" name="Set scale" sid="164667809164382" type="btn_Start">
+                    <param id="0" name="Scale">0.95</param>
+                </action>
+                <action id="-16" name="Wait" sid="527576224764226" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="9" name="Set scale" sid="895318976382719" type="btn_Start">
+                    <param id="0" name="Scale">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="227449210558197">
+            <conditions>
+                <condition id="17" name="On tap object" sid="624976308894898" type="Touch">
+                    <param id="0" name="Object">btn_Start</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="10" name="Request fullscreen" sid="445796375870385" type="Browser">
+                    <param id="0" name="Mode">0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="683334553204269" type="System">
+                    <param id="0" name="Layout">Lay2 - Tutorial</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-group description="" sid="943318295457495" title="Data Loader">
+            <sub-events>
+                <event-block sid="693247254220842">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="327647287555029" type="System" />
+                    </conditions>
+                    <actions>
+                        <action disabled="1" id="3" name="Clear storage" sid="260011293286393" type="LocalStorage" />
+                        <action id="5" name="Check item exists" sid="978145524172512" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_deviceid&quot;</param>
+                        </action>
+                        <action id="5" name="Check item exists" sid="450468862097858" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_email&quot;</param>
+                        </action>
+                        <action id="5" name="Check item exists" sid="354873695342310" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_leaderboard&quot;</param>
+                        </action>
+                        <action id="5" name="Check item exists" sid="823617814880154" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_rank&quot;</param>
+                        </action>
+                        <action id="0" name="Request URL" sid="670805346640139" type="AJAX">
+                            <param id="0" name="Tag">&quot;LP&quot;</param>
+                            <param id="1" name="URL">GetLeaderTimeStamp&amp;GetLimitTS</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="115420741047304">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="707077358093972" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_deviceid&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="820643008863200" type="System">
+                            <param id="0" name="Variable">Data_deviceID</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="153839251432037">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="505725840622663" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_email&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="764810516228637" type="System">
+                            <param id="0" name="Variable">Data_email</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="357354434137636">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="640280015817090" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_leaderboard&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="737543919349717" type="System">
+                            <param id="0" name="Variable">Data_LeaderBoard</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="771311811491134">
+                    <conditions>
+                        <condition id="9" name="On item exists" sid="654365632742333" type="LocalStorage">
+                            <param id="0" name="Key">&quot;data_rank&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="863196209167849" type="System">
+                            <param id="0" name="Variable">Data_Rank</param>
+                            <param id="1" name="Value">LocalStorage.ItemValue</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="516907947350861">
+                    <conditions>
+                        <condition id="0" name="On completed" sid="754569553857928" type="AJAX">
+                            <param id="0" name="Tag">&quot;LP&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="778440665973966" type="System">
+                            <param id="0" name="Variable">RunningText</param>
+                            <param id="1" name="Value">&quot;&quot;</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="479940367798146">
+                            <conditions>
+                                <condition id="-12" name="Repeat" sid="951743332564505" type="System">
+                                    <param id="0" name="Count">GetLimitTS</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="778043165322421" type="System">
+                                    <param id="0" name="Variable">RunningText</param>
+                                    <param id="1" name="Value">&quot; | User&quot;&amp;tokenat(AJAX.LastData,loopindex*2,&quot;|&quot;) &amp; &quot;  Laps&quot;&amp;tokenat(AJAX.LastData,(loopindex*2)+1,&quot;|&quot;) </param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="532076549919116">
+                            <conditions>
+                                <condition id="-1" name="Every tick" sid="748976076952693" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="713668064333678" type="RunningText">
+                                    <param id="0" name="Text">&quot;Lastest Player : &quot;&amp;RunningText&amp; &quot; | &quot;</param>
+                                </action>
+                                <action behavior="Bullet" id="5" name="Set enabled" sid="850827477679880" type="RunningText">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="312136833161915">
+                    <conditions>
+                        <condition id="1" name="On error" sid="386476520189659" type="AJAX">
+                            <param id="0" name="Tag">&quot;LP&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="937646227687922">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="297417595552193" type="System">
+                    <param id="0" name="Interval (seconds)">30</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Request URL" sid="858695313869404" type="AJAX">
+                    <param id="0" name="Tag">&quot;LP&quot;</param>
+                    <param id="1" name="URL">GetLeaderTimeStamp&amp;GetLimitTS</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
